@@ -44,7 +44,7 @@ define('SMTP_ENCRYPTION', 'ssl');
  * ALTERE: Coloque seu email completo aqui
  * Exemplo: contato@nocontroledodireito.com.br
  */
-define('SMTP_USERNAME', 'seuemail@seudominio.com.br');
+define('SMTP_USERNAME', 'administrativo@nocontroledodireito.com.br');
 
 /**
  * Senha do email
@@ -52,7 +52,7 @@ define('SMTP_USERNAME', 'seuemail@seudominio.com.br');
  * Esta é a mesma senha que você usa para acessar seu email
  * MANTENHA ESTA SENHA SEGURA!
  */
-define('SMTP_PASSWORD', 'SuaSenhaAqui123');
+define('SMTP_PASSWORD', 'Ncdd#2025!');
 
 // ==== CONFIGURAÇÕES DE ENVIO ====
 
@@ -60,7 +60,7 @@ define('SMTP_PASSWORD', 'SuaSenhaAqui123');
  * Email que aparecerá como remetente
  * Geralmente é o mesmo que SMTP_USERNAME
  */
-define('EMAIL_FROM', 'seuemail@seudominio.com.br');
+define('EMAIL_FROM', 'administrativo@nocontroledodireito.com.br');
 
 /**
  * Nome que aparecerá como remetente
