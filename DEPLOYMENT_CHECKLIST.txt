@@ -1,0 +1,365 @@
+=================================================================
+      CHECKLIST DE IMPLANTAÇÃO - NO CONTROLE DO DIREITO
+=================================================================
+
+Use esta lista para garantir que tudo está funcionando corretamente
+antes e depois de fazer o deploy no servidor Hostinger.
+
+=================================================================
+📋 ANTES DO DEPLOY
+=================================================================
+
+PREPARAÇÃO LOCAL:
+[ ] Todos os arquivos foram baixados/descompactados
+[ ] Estrutura de pastas está correta
+[ ] Logo está presente
+[ ] Arquivos PHPMailer estão na pasta phpmailer/
+
+CONFIGURAÇÃO:
+[ ] Email criado na Hostinger (ex: contato@seudominio.com.br)
+[ ] Senha do email anotada em local seguro
+[ ] config.php editado com credenciais corretas
+[ ] Verificado 3 vezes que email e senha estão corretos
+[ ] EMAIL_TO configurado para receber as mensagens
+
+DOCUMENTAÇÃO:
+[ ] Leu o README.txt (instruções rápidas)
+[ ] Consultou GUIA_CONFIGURACAO_HOSTINGER.md quando necessário
+[ ] Entendeu como funciona o sistema de email
+
+=================================================================
+📤 DURANTE O DEPLOY
+=================================================================
+
+UPLOAD DE ARQUIVOS:
+[ ] Conectado ao hPanel da Hostinger
+[ ] Navegou até public_html (ou pasta do domínio)
+[ ] Limpou arquivos antigos (se necessário)
+[ ] Upload do ZIP completo OU
+[ ] Upload de todos os arquivos individuais
+[ ] Extraiu o ZIP (se aplicável)
+[ ] Verificou que TODOS os arquivos estão presentes
+[ ] Pasta phpmailer/ com 3 arquivos dentro
+
+PERMISSÕES:
+[ ] config.php: 644
+[ ] send_email.php: 644
+[ ] .htaccess: 644
+[ ] script.js: 644
+[ ] styles.css: 644
+[ ] index.html: 644
+[ ] Pasta phpmailer/: 755
+[ ] Arquivos em phpmailer/: 644
+
+VERIFICAÇÃO VISUAL:
+[ ] Todos os arquivos aparecem no Gerenciador de Arquivos
+[ ] Estrutura de pastas idêntica ao local
+[ ] Tamanhos de arquivo corretos
+
+=================================================================
+🧪 TESTES PÓS-DEPLOY
+=================================================================
+
+SITE BÁSICO:
+[ ] Site abre no navegador (https://seudominio.com.br)
+[ ] Todas as seções aparecem corretamente
+[ ] Logo aparece no header
+[ ] Menu funciona (desktop)
+[ ] Menu mobile abre e fecha
+[ ] Animações de scroll funcionam
+[ ] Links das redes sociais funcionam
+
+FORMULÁRIO DE CONTATO:
+[ ] Formulário está visível
+[ ] Todos os campos aparecem
+[ ] Labels estão corretas
+[ ] Botão "Enviar Mensagem" aparece
+
+VALIDAÇÃO DO FORMULÁRIO:
+[ ] Tenta enviar vazio → mostra erro
+[ ] Tenta enviar sem nome → mostra erro
+[ ] Tenta enviar email inválido → mostra erro
+[ ] Tenta enviar mensagem muito curta → mostra erro
+
+ENVIO DE EMAIL:
+[ ] Preenche todos os campos corretamente
+[ ] Clica em "Enviar Mensagem"
+[ ] Botão muda para "Enviando..." com spinner
+[ ] Aguarda alguns segundos
+[ ] Aparece mensagem verde de sucesso
+[ ] Formulário é limpo automaticamente
+
+RECEBIMENTO DE EMAIL:
+[ ] Acessa webmail.hostinger.com
+[ ] Faz login com o email configurado em EMAIL_TO
+[ ] Verifica caixa de entrada
+[ ] Email com assunto "[NCDD] Nova Mensagem de Contato" recebido
+[ ] Email está formatado corretamente
+[ ] Todas as informações estão presentes
+[ ] Responder ao email vai para o remetente correto
+
+TESTE ANTI-SPAM:
+[ ] Envia 3 emails em sequência → todos funcionam
+[ ] Envia 11 emails em menos de 1 hora → 11º é bloqueado
+[ ] Aguarda 1 hora → consegue enviar novamente
+
+MOBILE RESPONSIVENESS:
+[ ] Testa em smartphone real ou DevTools
+[ ] Site ocupa 100% da largura
+[ ] Não há scroll horizontal
+[ ] Menu mobile funciona
+[ ] Formulário é utilizável
+[ ] Campos são grandes o suficiente para tocar
+[ ] Teclado correto aparece (email keyboard no campo email)
+[ ] Zoom não acontece ao focar no input (iOS)
+
+DIFERENTES TAMANHOS:
+[ ] 320px (iPhone SE) - tudo visível
+[ ] 375px (iPhone 8) - tudo visível
+[ ] 390px (iPhone 12) - tudo visível
+[ ] 412px (Pixel) - tudo visível
+[ ] 768px (iPad) - tudo visível
+[ ] 1024px (Desktop) - tudo visível
+[ ] 1920px (Full HD) - tudo visível
+
+NAVEGADORES:
+[ ] Chrome - funciona
+[ ] Firefox - funciona
+[ ] Safari - funciona
+[ ] Edge - funciona
+
+=================================================================
+🔒 SEGURANÇA
+=================================================================
+
+SSL/HTTPS:
+[ ] Certificado SSL instalado
+[ ] Site abre com https://
+[ ] Cadeado verde aparece na barra de endereço
+[ ] Redirecionamento HTTP → HTTPS ativo
+[ ] Nenhum aviso de "não seguro"
+
+PROTEÇÃO DE ARQUIVOS:
+[ ] Tenta acessar https://seudominio.com.br/config.php → 403 Forbidden
+[ ] Tenta acessar https://seudominio.com.br/phpmailer/PHPMailer.php → 403
+[ ] Tenta acessar https://seudominio.com.br/.htaccess → 403
+
+HEADERS DE SEGURANÇA:
+[ ] Abre DevTools → Network → Headers
+[ ] Recarrega a página
+[ ] Verifica presença de X-Frame-Options
+[ ] Verifica presença de X-Content-Type-Options
+
+ANTI-SPAM:
+[ ] Rate limiting funciona (máx 10 emails/hora)
+[ ] Mensagens com palavras spam são bloqueadas
+
+=================================================================
+📧 EMAIL
+=================================================================
+
+CONFIGURAÇÃO SMTP:
+[ ] SPF configurado no hPanel
+[ ] DKIM configurado no hPanel
+[ ] DMARC configurado no hPanel
+
+TESTE DE SPAM:
+[ ] Envia email de teste para seu Gmail
+[ ] Verifica se NÃO caiu em spam
+[ ] Se caiu, configura SPF/DKIM/DMARC
+
+TESTE DE REPLY-TO:
+[ ] Recebe email do formulário
+[ ] Clica em "Responder"
+[ ] Email do visitante aparece automaticamente
+[ ] Consegue responder normalmente
+
+=================================================================
+🎨 VISUAL E UX
+=================================================================
+
+IDENTIDADE VISUAL:
+[ ] Cores roxo (#6F379B) e rosa (#FF216B) corretas
+[ ] Logo aparece corretamente
+[ ] Fontes carregam (Work Sans, Playfair Display)
+[ ] Ícones Font Awesome aparecem
+
+LAYOUT:
+[ ] Espaçamento adequado
+[ ] Textos legíveis
+[ ] Cards alinhados
+[ ] Botões com tamanho adequado
+[ ] Imagens não quebradas
+
+FEEDBACK VISUAL:
+[ ] Hover em botões muda cor
+[ ] Hover em cards eleva ligeiramente
+[ ] Loading spinner aparece durante envio
+[ ] Mensagens de sucesso/erro são claras
+[ ] Cores das mensagens corretas (verde, vermelho, azul)
+
+=================================================================
+⚡ PERFORMANCE
+=================================================================
+
+VELOCIDADE:
+[ ] Site carrega em menos de 3 segundos
+[ ] Imagens otimizadas
+[ ] CSS e JS minificados (por compressão GZIP)
+
+CACHE:
+[ ] Headers de cache configurados
+[ ] Imagens em cache (verifica no DevTools)
+[ ] CSS/JS em cache
+
+COMPRESSÃO:
+[ ] GZIP ativo (verifica tamanho transferido vs tamanho real)
+[ ] Economia de ~70% no tamanho
+
+=================================================================
+📊 ANALYTICS (OPCIONAL)
+=================================================================
+
+Se configurou analytics:
+[ ] Google Analytics instalado
+[ ] Código de tracking funcionando
+[ ] Conversões rastreadas
+[ ] Eventos do formulário rastreados
+
+=================================================================
+🔄 BACKUP
+=================================================================
+
+PRIMEIRO BACKUP:
+[ ] Cria backup completo no hPanel
+[ ] Baixa backup para computador local
+[ ] Salva em local seguro (Drive, Dropbox)
+[ ] Testa restauração do backup
+
+BACKUP DE EMAIL:
+[ ] Exporta emails do webmail
+[ ] Salva localmente
+
+DOCUMENTAÇÃO DE SENHAS:
+[ ] Senhas anotadas em gerenciador seguro
+[ ] Backup das senhas em local diferente
+
+=================================================================
+📝 MONITORAMENTO CONTÍNUO
+=================================================================
+
+PRIMEIRA SEMANA:
+[ ] Dia 1: Testa formulário
+[ ] Dia 3: Verifica se recebeu emails de visitantes reais
+[ ] Dia 7: Revisa logs de erro no hPanel
+
+PRIMEIRO MÊS:
+[ ] Semana 1: Monitora envios de email
+[ ] Semana 2: Verifica se há tentativas de spam/bot
+[ ] Semana 3: Analisa conversões
+[ ] Semana 4: Primeiro backup mensal
+
+CONTÍNUO:
+[ ] Monitora emails recebidos diariamente
+[ ] Responde mensagens em até 24h
+[ ] Verifica logs de erro semanalmente
+[ ] Faz backup mensal
+[ ] Atualiza PHPMailer anualmente
+
+=================================================================
+🐛 TROUBLESHOOTING
+=================================================================
+
+Se algo não funcionar:
+
+1. CONSULTE A DOCUMENTAÇÃO:
+   - README.txt (rápido)
+   - GUIA_CONFIGURACAO_HOSTINGER.md (completo)
+   - changelog.txt (detalhes técnicos)
+
+2. VERIFIQUE OS LOGS:
+   - hPanel → Logs de Erro
+   - Procure por erros do PHP
+   - Anote mensagens de erro completas
+
+3. ATIVE DEBUG MODE:
+   - Edite config.php
+   - Mude SMTP_DEBUG para 2
+   - Tente enviar email
+   - Veja erros detalhados
+   - VOLTE para 0 depois!
+
+4. SUPORTE HOSTINGER:
+   - Chat ao vivo 24/7
+   - Muito responsivos
+   - Sempre ajudam
+
+=================================================================
+✅ DEPLOY COMPLETO
+=================================================================
+
+Quando todos os itens acima estiverem marcados:
+
+[ ] Site está online e funcional
+[ ] Emails sendo enviados e recebidos
+[ ] Mobile 100% responsivo
+[ ] Segurança implementada
+[ ] SSL ativo
+[ ] Backup realizado
+[ ] Monitoramento configurado
+
+🎉 PARABÉNS! SEU SITE ESTÁ NO AR! 🚀
+
+=================================================================
+📅 MANUTENÇÃO PROGRAMADA
+=================================================================
+
+DIÁRIA:
+- Verificar emails recebidos
+- Responder mensagens
+
+SEMANAL:
+- Verificar logs de erro
+- Testar formulário
+
+MENSAL:
+- Fazer backup completo
+- Verificar estatísticas
+- Atualizar conteúdo (se necessário)
+
+TRIMESTRAL:
+- Trocar senhas
+- Revisar segurança
+- Verificar atualizações do PHPMailer
+
+ANUAL:
+- Renovar domínio
+- Renovar SSL (automático com Let's Encrypt)
+- Revisar e atualizar conteúdo
+- Atualizar PHPMailer
+
+=================================================================
+📞 CONTATOS ÚTEIS
+=================================================================
+
+HOSTINGER:
+- Chat: https://hpanel.hostinger.com
+- Email: support@hostinger.com
+- Tutoriais: https://www.hostinger.com.br/tutoriais/
+
+PHPMAILER:
+- GitHub: https://github.com/PHPMailer/PHPMailer
+- Docs: https://github.com/PHPMailer/PHPMailer/wiki
+
+RECURSOS:
+- Stack Overflow: https://stackoverflow.com
+- Mozilla Developer Network: https://developer.mozilla.org
+
+=================================================================
+
+Última atualização: Novembro 2025
+Versão: 2.0
+
+Desenvolvido por: DeepAgent - Abacus.AI
+
+=================================================================
