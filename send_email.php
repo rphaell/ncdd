@@ -101,9 +101,9 @@ if (!$data) {
 }
 
 // Extrai e sanitiza os dados
-$name = isset($data['name']) ? sanitizeString($data['name']) : '';
-$email = isset($data['email']) ? sanitizeString($data['email']) : '';
-$message = isset($data['message']) ? sanitizeString($data['message']) : '';
+$name = sanitizeString($data['name'] ?? $data['nome'] ?? '');
+$email = sanitizeString($data['email'] ?? '');
+$message = sanitizeString($data['message'] ?? $data['mensagem'] ?? '');
 
 // Array para armazenar erros de validação
 $errors = [];
