@@ -129,12 +129,9 @@ contactForm.addEventListener('submit', async (e) => {
         };
         
         // Send AJAX request
-        const response = await fetch('send_email.php', {
+        const response = await fetch('./send_email.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
+            body: new FormData(contactForm)
         });
         
         // Parse JSON response
